@@ -1,0 +1,5 @@
+Installation:
+
+  git clone git://github.com/olivier-o/dotfiles.git ~/dotfiles
+
+  run makesymlinks.sh
