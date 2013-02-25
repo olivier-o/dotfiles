@@ -1,0 +1,10 @@
+--color
+--type-add=css=.scss
+--type-set=scss=.scss
+
+--type-set=haml=.haml
+
+--type-add=js=.js.coffee
+--type-set=coffee=.js.coffee
+
+
