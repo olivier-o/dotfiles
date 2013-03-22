@@ -11,7 +11,7 @@
 " Feature: Navigation
 " Feature: Disable arrow key 
 " Feature: Custom Mapping
-" Plugin: Command-T (file lookup in directory)
+" Vundle: Bundle Manager
 " Plugin: NERDTree (file browser)
 " Plugin: Neocomplcache
 " Helper functions
@@ -22,8 +22,6 @@
 " Basic
 "______________________________________________________________________________
 
-"remove compatibility with vi
-set nocompatible
 filetype off 
 call pathogen#helptags()
 call pathogen#infect()
@@ -75,8 +73,8 @@ endif
 "______________________________________________________________________________
 
 "full screen option
-set fuoptions=maxvert,maxhorz
-set fu
+"set fuoptions=maxvert,maxhorz
+"set fu
 
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
@@ -136,44 +134,21 @@ set visualbell t_vb=
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Colors and Fonts
 "______________________________________________________________________________
-colorscheme railscasts
-
-if has("gui_running")
-    "tell the term has 256 colors
-    set t_Co=256
-
-    if has("gui_gnome")
-        set term=gnome-256color
-        "colorscheme ir_dark
-        "set guifont=Inconsolata\ Medium\ 12
-        set guifont=monaco
-    else
-        "colorscheme railscasts
-        set guitablabel=%M%t
-        set lines=40
-        set columns=115
-    endif
-    if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo\ Bold:h14
-        " key binding for Command-T to behave properly
-        " uncomment to replace the Mac Command-T key to Command-T plugin
-        "macmenu &File.New\ Tab key=<nop>
-        "map <D-t> :CommandT<CR>
-        " make Mac's Option key behave as the Meta key
-        set invmmta
-    endif
-    if has("gui_win32") || has("gui_win32s")
-        set guifont=Consolas:h12
-        set enc=utf-8
-    endif
-else
-    "dont load csapprox if there is no gui support - silences an annoying warning
-    let g:CSApprox_loaded = 1
+if $TERM =~ '256color'
+  set t_Co=256
+elseif $TERM =~ '^xterm$'
+  set t_Co=256
 endif
+colorscheme molokai
+"set guifont=Menlo\ Bold:h14
+
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " File and Buffer
 "______________________________________________________________________________
+
+" Always edit file, even when swap file is found
+set shortmess+=A
 
 "reselect just pasted text
 nnoremap <leader>m V`]
@@ -215,6 +190,14 @@ function! s:HighlightLongLines(width)
     endif
 endfunction
 
+map <Leader>l :MiniBufExplorer<cr>
+let g:miniBufExplorerMoreThanOne = 10000
+let g:miniBufExplModSelTarget = 1
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplSplitBelow=1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplVSplit = 20
+
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Fold and scroll
 "______________________________________________________________________________
@@ -233,8 +216,10 @@ set sidescroll=1
 " Search matching
 "______________________________________________________________________________
 
-"replace grep with ack http://betterthangrep.com/
-set grepprg=ack
+" Use Ag (https://github.com/ggreer/the_silver_searcher) instead of Grep when available
+if executable("ag")
+  set grepprg=ag\ --noheading\ --nogroup\ --nocolor
+endif
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
@@ -310,6 +295,29 @@ set laststatus=2        "show status line for last window
 set mouse=a
 set ttymouse=xterm2
 
+"screen settings
+let g:ScreenImpl = 'Tmux'
+let g:ScreenShellTmuxInitArgs = '-2'
+let g:ScreenShellInitialFocus = 'shell'
+let g:ScreenShellQuitOnVimExit = 0
+map <F5> :ScreenShellVertical<CR>
+command -nargs=? -complete=shellcmd W  :w | :call ScreenSend("load '".@%."';")
+map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
+map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
+
+"cursor shape
+if exists('$ITERM_PROFILE')
+  if exists('$TMUX')
+    let &t_SI = "\<Esc>[3 q"
+    let &t_EI = "\<Esc>[0 q"
+  else
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+end
+
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Feature: Navigation
 "______________________________________________________________________________
@@ -344,15 +352,46 @@ nnoremap k gk
 iabbrev rdebug    require 'ruby-debug'; Debugger.start; Debugger.settings[:autoeval] = 1; Debugger.settings[:autolist] = 1; debugger
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-" Plugin: Command-T
+" Vundle: Bundle Manager
 "______________________________________________________________________________
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" Vundle manage Vundle: required! 
+Bundle 'gmarik/vundle'
 
-"Command-T configuration
-let g:CommandTMaxHeight=10
-let g:CommandTMatchWindowAtTop=1
+" original repos on github
+  Bundle 'xolox/vim-reload'
+  Bundle 'jiangmiao/auto-pairs'
+  Bundle 'kien/ctrlp.vim'
+  " jshint require nodejs => npm install jshint -g
+  Bundle 'walm/jshint.vim'
+  Bundle 'scrooloose/nerdcommenter'
+  Bundle 'scrooloose/nerdtree'
+  " syntax checking
+  Bundle 'scrooloose/syntastic'
+  " beautify status line
+  Bundle 'Lokaltog/vim-powerline'
+  " tmux integration
+  Bundle 'ervandew/screen'
+  Bundle 'ervandew/supertab'
+  Bundle 'Shougo/neocomplcache'
+  Bundle 'Shougo/neosnippet'
+  " A parser for a condensed HTML format 
+  Bundle 'tristen/vim-sparkup'
+  " see practical vim page 236
+  Bundle 'nelstrom/vim-qargs'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-surround'
 
-"map to CommandT TextMate style finder
-nnoremap <leader>t :CommandT<CR>
+  " syntax
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'tpope/vim-cucumber'
+  Bundle 'tpope/vim-haml'
+  Bundle 'nono/vim-handlebars'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-rails'
+  Bundle 'slim-template/slim'
+" vim-scripts repos
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: NERDTree
