@@ -53,8 +53,8 @@ set history=1000
 nmap <leader>l :set list!<CR>
  
 " Change symbols for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
-
+set list!                       " Display unprintable characters
+set listchars=eol:¬,tab:▸\ ,trail:•,extends:»,precedes:«
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Quick .vimrc access 
@@ -303,7 +303,7 @@ let g:ScreenShellQuitOnVimExit = 0
 map <F5> :ScreenShellVertical<CR>
 command -nargs=? -complete=shellcmd W  :w | :call ScreenSend("load '".@%."';")
 map <Leader>c :ScreenShellVertical bundle exec rails c<CR>
-map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
+map <Leader>s :w<CR> :call ScreenShellSend("rspec ".@% . ':' . line('.'))<CR>
 map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
 map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
@@ -363,6 +363,7 @@ Bundle 'gmarik/vundle'
   Bundle 'xolox/vim-reload'
   Bundle 'jiangmiao/auto-pairs'
   Bundle 'kien/ctrlp.vim'
+  Bundle 'tomtom/quickfixsigns_vim'
   " jshint require nodejs => npm install jshint -g
   Bundle 'walm/jshint.vim'
   Bundle 'scrooloose/nerdcommenter'
@@ -382,7 +383,7 @@ Bundle 'gmarik/vundle'
   Bundle 'nelstrom/vim-qargs'
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-surround'
-
+  Bundle 'epmatsw/ag.vim'
   " syntax
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'tpope/vim-cucumber'
@@ -390,7 +391,8 @@ Bundle 'gmarik/vundle'
   Bundle 'nono/vim-handlebars'
   Bundle 'tpope/vim-markdown'
   Bundle 'tpope/vim-rails'
-  Bundle 'slim-template/slim'
+  Bundle 'slim-template/vim-slim'
+  Bundle 'tobiassvn/vim-gemfile'
 " vim-scripts repos
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
@@ -419,6 +421,11 @@ let g:ragtag_global_maps = 1
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Plugin: Auto-pairs
+"______________________________________________________________________________
+ let g:AutoPairsFlyMode = 1
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: Neocomplcache
