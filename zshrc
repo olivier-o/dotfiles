@@ -37,7 +37,6 @@ plugins=(git bundler)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-#export PATH=/usr/local/heroku/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/Users/olivier/.rvm/gems/ruby-1.9.3-p327/bin:/Users/olivier/.rvm/gems/ruby-1.9.3-p327@global/bin:/Users/olivier/.rvm/rubies/ruby-1.9.3-p327/bin:/Users/olivier/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin/:/usr/local/bin:/usr/local/sbin:/Users/olivier/.rvm/bin
-export PATH=/usr/local/heroku/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/Users/olivier/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/bin:/usr/local/sbin:/Users/olivier/.rvm/bin:/usr/local/share/npm/bin
+export PATH=/usr/local/heroku/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
+eval "$(rbenv init -)"

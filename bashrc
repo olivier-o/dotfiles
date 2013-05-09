@@ -79,7 +79,6 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 ###############################################################################
 # PROMPT
@@ -271,4 +270,3 @@ alias setps1-dev-remote='setps1 screen=0 user=1 dir=1 git=1 wrap=0 which-python=
 
 setps1 screen=1 user=1 dir=1 git=1 wrap=0 which-python=0
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
