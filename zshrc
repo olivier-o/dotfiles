@@ -36,6 +36,8 @@ plugins=(git bundler)
 
 source $ZSH/oh-my-zsh.sh
 
+#disable ctrl+s in console to be able to use it in vim with ctrl-p bundle for opening in a split
+stty -ixon -ixoff
 # Customize to your needs...
 export PATH=/usr/local/heroku/bin:/opt/local/bin:/opt/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin
 
