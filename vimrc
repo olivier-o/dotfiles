@@ -245,7 +245,7 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Tagging
 "______________________________________________________________________________
-set tag=./tags,tags,./.git/tags
+set tag=./tags,tags,./.git/tags;/
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Status line 
@@ -391,6 +391,8 @@ Bundle 'gmarik/vundle'
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-surround'
   Bundle 'epmatsw/ag.vim'
+  "bar to display ctags on a panel
+  Bundle 'majutsushi/tagbar'
   " syntax
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'tpope/vim-cucumber'
@@ -401,6 +403,12 @@ Bundle 'gmarik/vundle'
   Bundle 'slim-template/vim-slim'
   Bundle 'tobiassvn/vim-gemfile'
 " vim-scripts repos
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Plugin: Tagbar
+"______________________________________________________________________________
+
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: NERDTree
