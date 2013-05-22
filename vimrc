@@ -403,6 +403,7 @@ Bundle 'gmarik/vundle'
   Bundle 'slim-template/vim-slim'
   Bundle 'tobiassvn/vim-gemfile'
 " vim-scripts repos
+  Bundle 'iptables'
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: Tagbar
