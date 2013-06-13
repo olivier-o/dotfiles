@@ -408,7 +408,10 @@ Bundle 'gmarik/vundle'
   Bundle 'tpope/vim-rails'
   Bundle 'slim-template/vim-slim'
   Bundle 'tobiassvn/vim-gemfile'
+  Bundle 'derekwyatt/vim-scala' 
 " vim-scripts repos
+  Bundle 'iptables'
+  Bundle 'crontab.vim'
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: Tagbar
