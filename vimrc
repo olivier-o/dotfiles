@@ -409,9 +409,16 @@ Bundle 'gmarik/vundle'
   Bundle 'slim-template/vim-slim'
   Bundle 'tobiassvn/vim-gemfile'
   Bundle 'derekwyatt/vim-scala' 
+  Bundle 'tfnico/vim-gradle'
 " vim-scripts repos
   Bundle 'iptables'
   Bundle 'crontab.vim'
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Plugin: ctrlp
+"______________________________________________________________________________
+
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:20'
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: powerline
