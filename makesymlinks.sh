@@ -57,3 +57,5 @@ fi
 }
 
 install_zsh
+
+mkdir -p ~/tmp
