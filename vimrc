@@ -374,6 +374,7 @@ Bundle 'gmarik/vundle'
 " original repos on github
   Bundle 'kana/vim-fakeclip'
   Bundle 'xolox/vim-reload'
+  Bundle 'xolox/vim-misc'
   Bundle 'jiangmiao/auto-pairs'
   Bundle 'kien/ctrlp.vim'
   Bundle 'tomtom/quickfixsigns_vim'
