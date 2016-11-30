@@ -4,7 +4,8 @@ alias ls='ls -G'
 autoload zmv
 source ~/tmuxinator.zsh
 export EDITOR='vim'
-
+# allow ctr-e and ctrl-a to work on tmux
+bindkey -e
 # -------------------------------------------------------------------
 # # Git aliases
 # # -------------------------------------------------------------------
