@@ -4,11 +4,18 @@ alias ls='ls -G'
 autoload zmv
 source ~/tmuxinator.zsh
 export EDITOR='vim'
+
 # allow ctr-e and ctrl-a to work on tmux
 bindkey -e
+
+# zsh completion
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+autoload -Uz compinit
+compinit
 # -------------------------------------------------------------------
-# # Git aliases
-# # -------------------------------------------------------------------
+# Git aliases
+# -------------------------------------------------------------------
 #  
   alias ga='git add -A'
   alias gp='git push'
