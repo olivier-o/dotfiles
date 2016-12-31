@@ -4,7 +4,7 @@ alias ls='ls -G'
 autoload zmv
 source ~/tmuxinator.zsh
 export EDITOR='vim'
-
+export PATH=./node_modules/.bin:$PATH
 # allow ctr-e and ctrl-a to work on tmux
 bindkey -e
 
