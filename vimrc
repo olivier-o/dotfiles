@@ -351,6 +351,7 @@ call vundle#begin()
   Plugin 'SirVer/ultisnips'
   Plugin 'honza/vim-snippets'
   Plugin 'Valloric/YouCompleteMe'
+  Plugin 'bentayloruk/vim-react-es6-snippets'
   "Plugin 'Konfekt/FastFold'
   Plugin 'terryma/vim-multiple-cursors'
   " A parser for a condensed HTML format 
@@ -378,7 +379,7 @@ call vundle#begin()
   Plugin 'jade.vim'
   Plugin 'fatih/vim-go'
   Plugin 'pangloss/vim-javascript'
-  "Plugin 'mxw/vim-jsx'
+  Plugin 'mxw/vim-jsx'
   Plugin 'isRuslan/vim-es6'
   Plugin 'elzr/vim-json'
   Plugin 'iptables'
