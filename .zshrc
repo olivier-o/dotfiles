@@ -7,17 +7,24 @@ export EDITOR='vim'
 export PATH=./node_modules/.bin:$PATH
 # allow ctr-e and ctrl-a to work on tmux
 bindkey -e
-
+# bind Arrow Up and Arrow Down to history search
+# https://github.com/zsh-users/zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 # zsh completion
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 autoload -Uz compinit
 compinit
+# ruby version management
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 # -------------------------------------------------------------------
 # Git aliases
 # -------------------------------------------------------------------
 #  
   alias ga='git add -A'
+  alias gap='git add -p'
   alias gp='git push'
   alias gl='git log'
   alias gst='git status'
