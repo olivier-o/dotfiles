@@ -72,6 +72,8 @@ autocmd FileType javascript.jsx runtime! ftplugin/html/sparkup.vim
 "vertical marker at char 100
 set colorcolumn=100
 
+set pastetoggle=<F2>
+
 "allow local config
 set exrc
 set secure
@@ -306,8 +308,9 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-"nnoremap j gj
-"nnoremap k gk
+"move cursor by display line when `wrap line` is set
+nnoremap j gj
+nnoremap k gk
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Feature: Custom Mapping
@@ -332,9 +335,11 @@ call vundle#begin()
 " Vundle manage Vundle: required! 
   Plugin 'gmarik/vundle'
 " original repos on github
+  Plugin 'tpope/vim-fugitive'
   "Plugin 'kana/vim-fakeclip'
   "Plugin 'xolox/vim-reload'
   "Plugin 'xolox/vim-misc'
+  Plugin 'iamcco/go-to-file.vim'
   Plugin 'jiangmiao/auto-pairs'
   Plugin 'kien/ctrlp.vim'
   "Plugin 'tomtom/quickfixsigns_vim'
@@ -365,6 +370,8 @@ call vundle#begin()
   Plugin 'epmatsw/ag.vim'
   "bar to display ctags on a panel
   Plugin 'majutsushi/tagbar'
+  "preview markdown file
+  Plugin 'suan/vim-instant-markdown'
   " syntax
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'tpope/vim-cucumber'
@@ -401,13 +408,13 @@ endi
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: UtltiSnip
 "______________________________________________________________________________
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<C-j>"
+"let g:UltiSnipsJumpForwardTrigger="<C-j>"
+""let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: sparkup
 "______________________________________________________________________________
@@ -437,8 +444,8 @@ nnoremap <silent> <Leader>t :TagbarToggle<CR>
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 "make <c-l> clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
+"nnoremap <C-L> :nohls<CR><C-L>
+"inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer
 nnoremap <leader>b :BufExplorer<cr>

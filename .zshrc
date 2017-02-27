@@ -5,6 +5,7 @@ autoload zmv
 source ~/tmuxinator.zsh
 export EDITOR='vim'
 export PATH=./node_modules/.bin:$PATH
+export NODE_PATH=/usr/local/lib/node_modules
 # allow ctr-e and ctrl-a to work on tmux
 bindkey -e
 # bind Arrow Up and Arrow Down to history search
