@@ -1,4 +1,4 @@
 .DS_Store
-vim/bundle/*
+vim/plugged/*
 stunnel/*
 .babel.json
