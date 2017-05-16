@@ -1,11 +1,11 @@
 [user]
-	name = "Olivier Oudry"
-  email = olivier@a2r.io
+    name = "Olivier Oudry"
+    email = olivier@a2r.io
 [core]
-	excludesfile = /Users/olivier/.gitignore
-	editor = vim
+    excludesfile = /Users/olivier/.gitignore
+    editor = vim
 [color]
-	ui = true
+    ui = true
 [alias]
     st = status
     ci = commit
