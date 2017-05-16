@@ -1,0 +1,143 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_sudoers: no 
+configure_terminal: yes
+configure_osx: no 
+
+dotfiles_repo: https://github.com/olivier-o/dotfiles.git
+dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_local_destination: ~/dotfiles
+dotfiles_files:
+  - .ackrc
+  - .gemrc
+  - .zshrc
+  - .ctags
+  - .gitconfig
+  - .gitignore_global
+  - .tigrc
+  - .tern-config
+  - .vimrc
+  - tmux.conf
+  - tmuxinator.zsh
+
+homebrew_installed_packages:
+  - aspcud
+  - autoconf
+  - automake
+  - c-ares
+  - cairo
+  - chruby
+  - clasp
+  - cmake
+  - cowsay
+  - ctags
+  - dbus
+  - fontconfig
+  - fontforge
+  - freetype
+  - gdbm
+  - geoip
+  - gettext
+  - git
+  - glib
+  - gmp
+  - gnu-sed
+  - gnutls
+  - go
+  - gobject-introspection
+  - gringo
+  - harfbuzz
+  - htop
+  - icu4c
+  - jpeg
+  - libevent
+  - libffi
+  - libgcrypt
+  - libgpg-error
+  - libpng
+  - libtasn1
+  - libtiff
+  - libtool
+  - libyaml
+  - lua
+  - mas
+  - mobile-shell
+  - mongodb
+  - mono
+  - mysql
+  - n
+  - nettle
+  - openssl
+  - pango
+  - pcre
+  - perl
+  - pixman
+  - pkg-config
+  - postgresql
+  - protobuf
+  - python
+  - readline
+  - reattach-to-user-namespace
+  - ruby
+  - ruby-install
+  - sqlite
+  - stunnel
+  - the_silver_searcher
+  - tig
+  - tmux
+  - universal-ctags
+  - vim
+  - wget
+  - xz
+  - zsh
+  - zsh-completions
+ 
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - android-file-transfer
+  - atom
+  - darktable
+  - dbeaver-enterprise
+  - diffmerge
+  - docker
+  - duet
+  - firefox
+  - gimp
+  - google-chrome
+  - icefloor
+  - iterm2
+  - libreoffice
+  - limechat
+  - paw
+  - robomongo
+  - slack
+  - sketch
+  - skype
+  - transmission
+  - virtualbox
+  - vlc
+  - wireshark
+  - xscope
+  - xquartz
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: 
+  - {id: 1091189122, name: "Bear (1.1.2)"}
+  - {id: 803453959, name: "Slack (2.6.0)"}
+  - {id: 497799835, name: "Xcode (8.3.2)"}
+  - {id: 715768417, name: "Microsoft Remote Desktop (8.0.27253)"}
+
+
+[]
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
