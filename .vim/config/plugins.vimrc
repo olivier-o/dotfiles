@@ -1,4 +1,4 @@
-call plug#begin('~/dotfiles/vim/plugged')
+call plug#begin('~/dotfiles/.vim/plugged')
 " colorschemes
 "Plug 'junegunn/seoul256.vim'
 "Plug 'nanotech/jellybeans.vim'
