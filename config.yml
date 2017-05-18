@@ -86,7 +86,6 @@ homebrew_installed_packages:
   - the_silver_searcher
   - tig
   - tmux
-  - universal-ctags
   - vim
   - wget
   - xz
