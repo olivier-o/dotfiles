@@ -86,7 +86,6 @@ homebrew_installed_packages:
   - the_silver_searcher
   - tig
   - tmux
-  - universal-ctags
   - vim
   - wget
   - xz
@@ -99,6 +98,7 @@ homebrew_taps:
   - homebrew/binary
   - homebrew/dupes
   - homebrew/versions
+  - getantibody/tap/antibody
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
