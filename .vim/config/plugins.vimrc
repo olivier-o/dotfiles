@@ -24,7 +24,7 @@ Plug 'epmatsw/ag.vim'
  Plug 'mbbill/undotree'
  Plug 'tpope/vim-commentary'
  Plug 'airblade/vim-gitgutter'
- Plug 'nathanaelkane/vim-indent-guides' " `,ig` to toggle
+ Plug 'nathanaelkane/vim-indent-guides' 
  Plug 'Raimondi/delimitMate'
  Plug 'tpope/vim-repeat'
  Plug 'tpope/vim-speeddating'
