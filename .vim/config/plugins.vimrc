@@ -58,6 +58,7 @@ Plug 'isRuslan/vim-es6'
  Plug 'pangloss/vim-javascript'
 
 " " syntax
+ Plug  'avakhov/vim-yaml'
 " Plug 'tpope/vim-haml'
 " Plug 'nono/vim-handlebars'
 " Plug 'tpope/vim-markdown'
