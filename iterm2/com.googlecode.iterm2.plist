@@ -365,13 +365,9 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm2/colorschemes</string>
+	<string>~/dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedSizeForSaveMode</key>
-	<string>{712, 448}</string>
-	<key>NSNavPanelExpandedStateForSaveMode</key>
-	<true/>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -1780,7 +1776,7 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>2603B313-A60C-46A1-81E3-BB6C2E2D8317</string>
+	<string>87FAEB96-DE70-4739-9A5A-F4E1DBC2F145</string>
 	<key>NoSyncLastTipTime</key>
 	<real>528933299.22851998</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -1790,7 +1786,7 @@
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>501578166.30928302</real>
+	<real>516782828.22589701</real>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -1908,15 +1904,13 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=53</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=85</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
 	<date>2017-10-04T07:02:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
-	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1479972480</real>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>

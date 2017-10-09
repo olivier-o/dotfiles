@@ -6,7 +6,7 @@ source ~/tmuxinator.zsh
 export EDITOR='vim'
 export PATH=./node_modules/.bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
-export SAVEHIST=10
+export SAVEHIST=1000
 export HISTFILE=~/.zsh_history
 setopt inc_append_history
 # allow ctr-e and ctrl-a to work on tmux
