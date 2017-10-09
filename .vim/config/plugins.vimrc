@@ -6,6 +6,8 @@ call plug#begin('~/dotfiles/.vim/plugged')
 "Plug 'croaker/mustang-vim'
 "Plug 'w0ng/vim-hybrid'
 
+" startup"
+"Plug 'mhinz/vim-startify'
 " general
 Plug 'iamcco/go-to-file.vim'
 Plug 'ervandew/supertab'
