@@ -6,9 +6,14 @@ source ~/tmuxinator.zsh
 export EDITOR='vim'
 export PATH=./node_modules/.bin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
-export SAVEHIST=1000
+export SAVEHIST=10000 # nmber of commands history file can hold (equal or larger than HISTSIZE)
+export HISTSIZE=10000 # number of commands from history file loaded into the shell’s memory
 export HISTFILE=~/.zsh_history
 setopt inc_append_history
+#no duplicates are saved
+setopt HIST_IGNORE_ALL_DUPS
+# share history between shell as history get saved
+setopt share_history
 # allow ctr-e and ctrl-a to work on tmux
 bindkey -e
 # bind Arrow Up and Arrow Down to history search

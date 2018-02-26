@@ -68,6 +68,11 @@ nnoremap <silent> <Leader>t :TagbarToggle<CR>
 " Plugin: NERDTree
 "______________________________________________________________________________
 
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeQuitOnOpen = 1
+" disable “Press ? for help”
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 nmap <silent> <Leader>n :NERDTreeToggle<CR>
 map <leader>r :NERDTreeFind<cr>
 "make <c-l> clear the highlight as well as redraw
