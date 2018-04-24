@@ -91,8 +91,9 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 "key mapping for vimgrep result navigation
 map <A-o> :copen<CR>
 map <A-q> :cclose<CR>
-map <A-j> :cnext<CR>
-map <A-k> :cprevious<CR>
+" j and k work without mapping
+" map <A-j> :cnext<CR> 
+" map <A-k> :cprevious<CR>
 
 "visual search mappings
 function! s:VSetSearch()

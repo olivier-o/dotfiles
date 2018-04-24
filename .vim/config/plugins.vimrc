@@ -34,10 +34,11 @@ Plug 'epmatsw/ag.vim'
  Plug 'tpope/vim-unimpaired'
  Plug 'justinmk/vim-sneak'
  Plug 'vim-scripts/camelcasemotion'
- Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
  Plug 'rstacruz/sparkup', {'rtp': 'vim/'}  
  Plug 'majutsushi/tagbar'
-
+ Plug 'pedrohdz/vim-yaml-folds'
 " " eye candy
 " "Plug 'myusuf3/numbers.vim'
 " "Plug 'vim-airline/vim-airline'
@@ -46,9 +47,10 @@ Plug 'epmatsw/ag.vim'
 
 " " javascript
 " "Plug 'guileen/vim-node-dict'
-Plug 'isRuslan/vim-es6'
+ Plug 'isRuslan/vim-es6'
  Plug 'moll/vim-node'
- Plug 'othree/yajs.vim'
+ " Plug 'othree/yajs.vim'
+ Plug 'pangloss/vim-javascript'
 " " Plug 'othree/javascript-libraries-syntax.vim'
  Plug '1995eaton/vim-better-javascript-completion'
  Plug 'gavocanov/vim-js-indent'

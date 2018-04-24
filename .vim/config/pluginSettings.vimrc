@@ -49,9 +49,11 @@ autocmd FileType javascript.jsx runtime! ftplugin/html/sparkup.vim
 
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-" Plugin: syntastic
+" Plugin: ale - syntax checking
 "______________________________________________________________________________
-let g:syntastic_javascript_checkers = ['eslint']
+
+map <A-j> <Plug>(ale_previous_wrap)
+map <A-k> <Plug>(ale_next_wrap)
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: lightline - replacement for powerline
