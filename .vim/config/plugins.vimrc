@@ -15,6 +15,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'epilande/vim-react-snippets'
 Plug 'haya14busa/incsearch.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
