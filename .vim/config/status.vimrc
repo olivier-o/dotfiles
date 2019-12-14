@@ -2,4 +2,6 @@
 " Status line 
 "______________________________________________________________________________
 let g:lightline = { 'colorscheme': 'wombat' }
+set laststatus=2
+set noshowmode
 

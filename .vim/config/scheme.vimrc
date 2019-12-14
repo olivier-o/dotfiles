@@ -13,5 +13,3 @@ endif
 colorscheme Tomorrow-Night
 "colorscheme monokai
 "set guifont=Menlo\ Bold:h14
-
-

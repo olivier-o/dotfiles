@@ -1,4 +1,9 @@
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Plugin: ack 
+"______________________________________________________________________________
+nnoremap <Leader>a :Ack!<Space>
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: ctrlp
 "______________________________________________________________________________
 
@@ -26,13 +31,16 @@ let g:vim_json_syntax_conceal = 0
 " Plugin: UtltiSnip
 "______________________________________________________________________________
 "" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsExpandTrigger="<C-j>"
 "let g:UltiSnipsJumpForwardTrigger="<C-j>"
 ""let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 "" If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
-
+let g:ycm_filepath_completion_use_working_dir = 0
+" let g:ycm_filetype_whitelist = { '*': 1 }
+" let g:ycm_use_ultisnips_completer = 1
+"
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: sparkup
 "______________________________________________________________________________
@@ -47,13 +55,6 @@ augroup END
 autocmd FileType javascript.js runtime! ftplugin/html/sparkup.vim
 autocmd FileType javascript.jsx runtime! ftplugin/html/sparkup.vim
 
-
-"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-" Plugin: ale - syntax checking
-"______________________________________________________________________________
-
-map <A-j> <Plug>(ale_previous_wrap)
-map <A-k> <Plug>(ale_next_wrap)
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Plugin: lightline - replacement for powerline
@@ -71,7 +72,7 @@ nnoremap <silent> <Leader>t :TagbarToggle<CR>
 "______________________________________________________________________________
 
 let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 1
 " disable “Press ? for help”
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -97,4 +98,13 @@ let g:syntastic_enable_signs=1
 " Plugin: Auto-pairs
 "______________________________________________________________________________
  let g:AutoPairsFlyMode = 0
+ 
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Plugin: ALE - Asynchronous linting/fixing for Vim and Language Server Protocol (LSP) integration
+"______________________________________________________________________________
 
+nmap <silent> <leader>ej :ALENext<cr>
+nmap <silent> <leader>ek :ALEPrevious<cr>
+" let g:ale_fixers = {'javascript': ['eslint']}
+" let g:ale_linters = {'javascript': ['']}
+" let g:ale_fix_on_save = 1

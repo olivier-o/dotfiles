@@ -125,3 +125,6 @@ cmap w!! %!sudo tee > /dev/null %
 "format json
 map <leader>j %!python -m json.tool<cr>
 
+
+"run formating on javascript file save
+"autocmd bufwritepost *.js silent !standard % --format  --fix
