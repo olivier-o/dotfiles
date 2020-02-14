@@ -2,7 +2,7 @@
     name = "Olivier Oudry"
     email = olivier@a2r.io
 [core]
-    excludesfile = /Users/olivier/.gitignore
+    excludesfile = ~/.gitignore_global
     editor = vim
 [color]
     ui = true
@@ -53,6 +53,6 @@
     tool = vimdiff
         
 [init]
-	templatedir = ~/.git_templates
+  # templatedir = ~/.git_templates
 [push]
 	default = simple
