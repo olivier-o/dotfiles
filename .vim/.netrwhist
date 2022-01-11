@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/olivier/dev/projects/phsa/repos/app/web-app'
+let g:netrw_dirhist_5='/Users/olivier/dev/projects/phsa/repos/app/web-app/e2e'
+let g:netrw_dirhist_4='/Users/olivier/dev/projects/phsa/repos/app/web-app/src/components/Lists/PatientEocs/EocPatientEntries'
+let g:netrw_dirhist_3='/Users/olivier/dev/projects/phsa/repos/api/AzureFunctions/src/azure/fhir-graphql/repository'
+let g:netrw_dirhist_2='/Users/olivier/dev/projects/phsa/repos/api/AzureFunctions/src/azure/common/utils'
+let g:netrw_dirhist_1='/Users/olivier/dev/projects/phsa/repos/api/AzureFunctions/src/azure/fhir-graphql/repository/queries'

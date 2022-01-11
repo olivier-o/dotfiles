@@ -1,41 +1,33 @@
 call plug#begin('~/dotfiles/.vim/plugged')
-" colorschemes
-"Plug 'junegunn/seoul256.vim'
-"Plug 'nanotech/jellybeans.vim'
-"Plug 'goatslacker/mango.vim'
-"Plug 'croaker/mustang-vim'
-"Plug 'w0ng/vim-hybrid'
-
-" startup"
-"Plug 'mhinz/vim-startify'
 " general
-Plug 'iamcco/go-to-file.vim' 
-Plug 'ervandew/supertab'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe'
+" explorer
+Plug 'lambdalisue/fern.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} | "autocompletion imports and type definition"
+" Track the engine.
 Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
-" Plug 'epilande/vim-react-snippets'
-" Plug 'haya14busa/incsearch.vim'
-Plug 'kien/ctrlp.vim'
+
+" fzf installed using Homebrew
+Plug '/usr/local/opt/fzf'
+" fzf vim integration
+Plug 'junegunn/fzf.vim'
+Plug 'jesseleite/vim-agriculture' |  "search enhancement
 Plug 'christoomey/vim-tmux-navigator'
-" "Plug 'vim-utils/vim-husk'
-Plug 'mileszs/ack.vim'
 " " editing
- Plug 'mbbill/undotree'
+" Plug 'mbbill/undotree'
  Plug 'tpope/vim-commentary'
  Plug 'airblade/vim-gitgutter'
- Plug 'nathanaelkane/vim-indent-guides' 
+ Plug 'itchyny/vim-gitbranch'
  Plug 'Raimondi/delimitMate'
  Plug 'tpope/vim-repeat'
  Plug 'tpope/vim-speeddating'
  Plug 'tpope/vim-surround'
  Plug 'tpope/vim-unimpaired'
- Plug 'justinmk/vim-sneak'
- Plug 'vim-scripts/camelcasemotion'
- Plug 'w0rp/ale'
- Plug 'rstacruz/sparkup', {'rtp': 'vim/'}  
- Plug 'majutsushi/tagbar'
+ " linter
+ Plug 'dense-analysis/ale'
+ " html helper
+ Plug 'mattn/emmet-vim'
  Plug 'pedrohdz/vim-yaml-folds'
  "# UUID generator
  Plug 'kburdett/vim-nuuid'
@@ -43,44 +35,18 @@ Plug 'mileszs/ack.vim'
  Plug 'itchyny/lightline.vim'
 
 " " javascript
-" "Plug 'guileen/vim-node-dict'
- Plug 'isRuslan/vim-es6'
- Plug 'moll/vim-node'
- " Plug 'othree/yajs.vim'
- " Plug 'pangloss/vim-javascript'
-" " Plug 'othree/javascript-libraries-syntax.vim'
- " Plug '1995eaton/vim-better-javascript-completion'
- " Plug 'gavocanov/vim-js-indent'
- " Plug 'ternjs/tern_for_vim'
- Plug 'digitaltoad/vim-jade'
- Plug 'elzr/vim-json'
- " Plug 'mxw/vim-jsx'
- " Plug 'bentayloruk/vim-react-es6-snippets'
- " Plug 'pangloss/vim-javascript'
 
 " " syntax
- Plug 'avakhov/vim-yaml'
- Plug 'jparise/vim-graphql'
- Plug 'leafgarland/typescript-vim'
-" Plug 'tpope/vim-haml'
-" Plug 'nono/vim-handlebars'
-" Plug 'tpope/vim-markdown'
-" Plug 'tpope/vim-rails'
-" Plug 'muz/vim-gemfile'
-" Plug 'derekwyatt/vim-scala' 
-" Plug 'fatih/vim-go'
-" Plug 'elzr/vim-json'
-" Plug 'iptables'
-" Plug 'crontab.vim'
-" Plug 'tmux-plugins/vim-tmux'
-" Plug 'othree/html5.vim'
-" Plug 'hail2u/vim-css3-syntax'
-" Plug 'othree/csscomplete.vim'
-" Plug 'sukima/xmledit'
+Plug 'sheerun/vim-polyglot'
+" Plug 'avakhov/vim-yaml'
+" Plug 'jparise/vim-graphql'
+" Plug 'HerringtonDarkholme/yats.vim'
 
 " " other
-Plug 'ciaranm/detectindent'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'terryma/vim-multiple-cursors'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } | "hexa color code interpretation
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()

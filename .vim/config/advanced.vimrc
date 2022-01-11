@@ -11,6 +11,31 @@ if has("autocmd")
 endif
 
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Feature: Copy current file name (relative/absolute) to system clipboard
+"______________________________________________________________________________
+
+if has("mac") || has("gui_macvim") || has("gui_mac")
+  " relative path  (src/foo.txt)
+  nnoremap <leader>cf :let @*=expand("%")<CR>
+
+  " absolute path  (/something/src/foo.txt)
+  nnoremap <leader>cF :let @*=expand("%:p")<CR>
+
+  " filename       (foo.txt)
+  nnoremap <leader>ct :let @*=expand("%:t")<CR>
+
+  " directory name (/something/src)
+  nnoremap <leader>ch :let @*=expand("%:p:h")<CR>
+endif
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Feature: resize vertically 
+"______________________________________________________________________________
+
+nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Feature: Navigation
 "______________________________________________________________________________
 
@@ -54,6 +79,7 @@ autocmd FileType c,cpp,python,ruby,java,javascript,json autocmd BufWritePre <buf
 "add color syntax
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufRead *.hamlbars set ft=haml
+au BufNewFile,BufRead *.variables set ft=css
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -67,8 +93,11 @@ set hidden
 
 "folding settings
 set foldmethod=syntax   "fold based on syntax
-set foldnestmax=5       "deepest fold is 5 levels
-set nofoldenable        "dont fold by default
+set foldcolumn=1        "defines 1 col at window left, to indicate folding
+set foldnestmax=10     "deepest fold is 10 levels
+" let javaScript_fold=1 "activate folding by JS syntax
+set foldlevelstart=99 "start file with all folds opened
+" set nofoldenable        "dont fold by default
 
 "vertical/horizontal scroll off settings
 set scrolloff=3
@@ -110,6 +139,12 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR>
 "______________________________________________________________________________
 set tag=./tags,tags,./.git/tags;/
 
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Feature: Display images
+"______________________________________________________________________________
+:autocmd BufEnter *.png,*.jpg,*gif exec "! ~/.iterm2/imgcat ".expand("%") | :bw
+
 "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 " Feature: Custom Mapping
 "______________________________________________________________________________
@@ -126,5 +161,14 @@ cmap w!! %!sudo tee > /dev/null %
 map <leader>j %!python -m json.tool<cr>
 
 
+nnoremap <silent> <Leader>sj :set syntax=json<CR>
 "run formating on javascript file save
 "autocmd bufwritepost *.js silent !standard % --format  --fix
+
+"‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+" Feature: Custom Mapping
+"______________________________________________________________________________
+set termguicolors
+"set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"

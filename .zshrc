@@ -4,7 +4,7 @@ alias ls='ls -G'
 autoload zmv
 source ~/tmuxinator.zsh
 export EDITOR='vim'
-export PATH=./node_modules/.bin:$PATH
+export PATH=./bin:./node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 export NODE_PATH=/usr/local/lib/node_modules
 export SAVEHIST=10000 # nmber of commands history file can hold (equal or larger than HISTSIZE)
 export HISTSIZE=10000 # number of commands from history file loaded into the shell’s memory
@@ -26,9 +26,9 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 autoload -Uz compinit
 compinit
 # ruby version management
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.6.5
+# source /usr/local/opt/chruby/share/chruby/chruby.sh
+# source /usr/local/opt/chruby/share/chruby/auto.sh
+# chruby ruby-2.7.2
 # -------------------------------------------------------------------
 # npm aliases
 # -------------------------------------------------------------------
@@ -65,3 +65,10 @@ chruby ruby-2.6.5
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+eval "$(rbenv init - zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
