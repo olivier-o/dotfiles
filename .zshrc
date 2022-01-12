@@ -69,6 +69,8 @@ compinit
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(rbenv init - zsh)"
+fpath=(~/.stripe $fpath)
+autoload -Uz compinit && compinit -i
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
